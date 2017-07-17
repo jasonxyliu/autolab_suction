@@ -1,6 +1,6 @@
 """
 Low level communication between Python and Arduino via pySerial.
-Arthor: Jason Liu
+Arthor: Jason Liu <xinyuliu@berkeley.edu>
 """
 
 from serial import Serial
