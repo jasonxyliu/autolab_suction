@@ -17,7 +17,6 @@ class Vacuum:
 
     def __init__(self):
         self._vacuum = VacuumSerialInterface(vacuum_comm="/dev/ttyUSB0", baudrate=115200)
-        print 'start robot'
         self._vacuum.start()
     
     def on(self):

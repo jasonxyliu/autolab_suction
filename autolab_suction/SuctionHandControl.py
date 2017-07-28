@@ -6,12 +6,11 @@ import serial
 import time
 
 # Initializing the serial connection. The port name should be changed with every computer.
-baudrate = 57600
-port = '/dev/cu.VacuumHand-DevB' # Mac
+COMM_TIME = 1.0
 
 class VacuumServo:
-	def __init__(self):
-                self._serialConnection = serial.Serial(port, baudrate, timeout = 1)
+	def __init__(self, baudrate=57600, port='/dev/rfcomm0', timeout=1.0):
+                self._serialConnection = serial.Serial(port, baudrate, timeout=timeout)
 
 	# Sends a command to move the servo to any position between -90 and 90 degrees, inclusive
 	def move(self, angle):
@@ -24,7 +23,7 @@ class VacuumServo:
 			elif targetAngle < -90:
 				targetAngle = -90
 			self._serialConnection.write(str(targetAngle).encode())
-
+                        time.sleep(COMM_TIME)
 		except TypeError:
 			print("Please input an integer in the range -90 to 90!")
 
