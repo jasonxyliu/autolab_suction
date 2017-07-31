@@ -26,9 +26,10 @@ class Vacuum:
         self._vacuum.off()
 
     def stop(self):
+        time.sleep(1)
         self._vacuum.stop()
         
-def test_vacuum(sleep=5):
+def test_vacuum(sleep=2):
     vac = Vacuum()
 
     print 'suction on'

@@ -6,7 +6,10 @@ import serial
 import time
 
 # Initializing the serial connection. The port name should be changed with every computer.
-COMM_TIME = 1.0
+COMM_TIME = 1.5
+
+# Offset from the zero position (for precise calibration)
+DEG_OFFSET = -1
 
 class VacuumServo:
 	def __init__(self, baudrate=57600, port='/dev/rfcomm0', timeout=1.0):
@@ -14,7 +17,7 @@ class VacuumServo:
 
 	# Sends a command to move the servo to any position between -90 and 90 degrees, inclusive
 	def move(self, angle):
-		targetAngle = int(angle)
+		targetAngle = int(angle + DEG_OFFSET)
 
 		# Capping angle inputs
 		try:
