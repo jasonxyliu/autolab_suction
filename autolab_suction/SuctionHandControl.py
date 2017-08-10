@@ -9,7 +9,7 @@ import time
 COMM_TIME = 1.5
 
 # Offset from the zero position (for precise calibration)
-DEG_OFFSET = -1
+DEG_OFFSET = -2
 
 class VacuumServo:
 	def __init__(self, baudrate=57600, port='/dev/rfcomm0', timeout=1.0):
