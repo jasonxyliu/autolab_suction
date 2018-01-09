@@ -17,12 +17,14 @@ class SuctionToggler(object):
     def __init__(self):
         self._vacuum = Vacuum()
 
-    def toggle_suction(self, on):
-        if on:
+    def toggle_suction(self, request):
+        rospy.loginfo('Suction {}'.format(request.on))
+        if request.on:
             self._vacuum.on()
         else:
             self._vacuum.off()
-
+        return True
+            
 if __name__ == '__main__':
     
     # initialize the ROS node

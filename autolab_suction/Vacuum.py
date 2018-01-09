@@ -29,7 +29,7 @@ class Vacuum:
         time.sleep(1)
         self._vacuum.stop()
         
-def test_vacuum(sleep=120):
+def test_vacuum(sleep=10):
     vac = Vacuum()
 
     print 'suction on'

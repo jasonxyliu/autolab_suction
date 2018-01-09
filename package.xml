@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>gqcnn</name>
+  <name>autolab_suction</name>
   <version>0.1.0</version>
   <description>The AUTOLAB suction package</description>
 
