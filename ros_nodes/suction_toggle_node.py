@@ -9,6 +9,6 @@ if __name__ == '__main__':
     toggle_suction = rospy.ServiceProxy('toggle_suction', Suction)
     rospy.loginfo('Suction On')
     toggle_suction(True)
-    time.sleep(5)
+    time.sleep(1)
     rospy.loginfo('Suction Off')
     toggle_suction(False)
