@@ -3,11 +3,8 @@ Python wrapper for the Arduino vacuum suction control
 Author: Jason Liu <xinyuliu@berkeley.edu>
 """
 from SerialCommInterface import VacuumSerialInterface
-from time import sleep
 
-import logging
 import time
-import IPython
 
 class Vacuum:
     """
